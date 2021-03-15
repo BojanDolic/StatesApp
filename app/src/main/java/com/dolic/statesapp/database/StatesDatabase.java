@@ -9,7 +9,7 @@ import androidx.room.RoomDatabase;
 import com.dolic.statesapp.dao.StatesDAO;
 import com.dolic.statesapp.entities.Drzava;
 
-@Database(entities = Drzava.class, version = 1)
+@Database(entities = Drzava.class, version = 3, exportSchema = false)
 public abstract class StatesDatabase extends RoomDatabase {
 
     public abstract StatesDAO statesDao();
@@ -26,6 +26,7 @@ public abstract class StatesDatabase extends RoomDatabase {
                             "baza_drzava"
                     ).createFromAsset("drzave.db")
                             .allowMainThreadQueries()
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
 

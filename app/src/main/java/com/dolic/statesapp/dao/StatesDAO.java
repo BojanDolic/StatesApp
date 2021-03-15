@@ -10,7 +10,7 @@ import java.util.List;
 @Dao
 public interface StatesDAO {
 
-    @Query("SELECT * FROM drzave")
+    @Query("SELECT * FROM drzave_table")
     public List<Drzava> getDrzave();
 
 }
